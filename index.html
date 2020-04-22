@@ -1,0 +1,92 @@
+<html>
+<head>
+	<title>BMI Calculator</title>
+	<link rel="stylesheet" type="text/css" href="material-dashboard.css">
+	</head>
+<body>
+	<div class="content">
+        <div class="container-fluid">
+                  <div class="row">
+            <div class="col-lg-12 col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">BMI Calculator</h4>
+                  <p class="card-category">Select between English and Metric Conventions</p>
+                </div>
+                <div class="card-body">
+<input type="radio" onclick="hideB(this)" name="aorb" checked><label class="label">Metric</label> |
+<input type="radio" onclick="hideA(this)" name="aorb"><label class="label">English</label>
+<div id="A" class="form-group">
+  <br/>
+  <form >
+            <h4 class="title">BMI Calculator (Metric)</h4>
+            <input class="form-control" id="weight" type="text" placeholder="Your weight in kilograms" />
+            <br />
+            <br />
+            <input class="form-control" id="height" type="text" placeholder="Your height in meters" />
+            <br />
+            <br />
+            
+            <input class = "submit" type="button"  value="Submit" onclick="bmim()" />
+            <p class="label" id="result">Here will be your result</p>
+
+        </form></div>
+<div id="B" style="visibility:hidden"  class="form-group">
+  <br/><form>
+            <h4 class="title">BMI Calculator (English)</h4>
+            <input class="form-control" id="weight1" type="text" placeholder="Your weight in Pounds" />
+            <br />
+            <br />
+            <input class="form-control" id="height1" type="text" placeholder="Your height in Inches" />
+            <br />
+            <br />
+            
+            <input class = "submit" type="button"  value="Submit" onclick="bmie()" />
+            <p class="label" id="result1">Here will be your result</p>
+        </form></div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+  </body>
+  <script type="text/javascript">
+  	function hideA(x) {
+   if (x.checked) {
+     document.getElementById("A").style.display = "none";
+     document.getElementById("B").style.visibility = "visible";
+   }
+ }
+
+function bmim () {
+var height = Number(document.getElementById("height").value);
+var weight = Number(document.getElementById("weight").value);
+var result = weight / (height * height);
+if (result < 18.5) {var category = "Underweight"}
+else if ((result >= 18.5) && (result <= 25)) {var category = "Normal"}
+	else if ((result > 25) && (result <= 30)) {var category = "Overweight"}
+		else if (result > 30) {var category = "Obese"}
+document.getElementById("result").innerHTML = "Your bmi score is : " + result + "<br>" +" Which Means that you are :" + category;
+}
+
+function bmie () {
+var heights = Number(document.getElementById("height1").value);
+var weights = Number(document.getElementById("weight1").value);
+var results = (weights / (heights * heights))*703;
+if (results < 18.5) {var categorys = "Underweight"}
+else if ((results >= 18.5) && (results <= 25)) {var categorys = "Normal"}
+	else if ((results > 25) && (results <= 30)) {var categorys = "Overweight"}
+		else if (results > 30) {var categorys = "Obese"}
+document.getElementById("result1").innerHTML = "Your bmi score is : " + results + "<br>" +" Which Means that you are :" + categorys;
+}
+
+ function hideB(x) {
+   if (x.checked) {
+     document.getElementById("B").style.visibility = "hidden";
+     document.getElementById("A").style.display = "initial";
+   }
+ }
+  </script>
+  </html>
