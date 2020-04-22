@@ -16,7 +16,20 @@
                 <div class="card-body">
 <input type="radio" onclick="hideB(this)" name="aorb" checked><label class="label">Metric</label> |
 <input type="radio" onclick="hideA(this)" name="aorb"><label class="label">English</label>
+<br><br>
+<div class="form-group">
+                          <label class="bmd-label-floating">Gender</label><br>
+                          <label class="radio-container m-r-45">Male
+                                            <input type="radio" checked="checked" name="gender" value="male">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="radio-container">Female
+                                            <input type="radio" name="gender" value="female">
+                                            <span class="checkmark"></span>
+                                        </label>
+                        </div>
 <div id="A" class="form-group">
+
   <br/>
   <form >
             <h4 class="title">BMI Calculator (Metric)</h4>
@@ -28,7 +41,7 @@
             <br />
             
             <input class = "submit" type="button"  value="Submit" onclick="bmim()" />
-            <p class="label" id="result">Here will be your result</p>
+            <p class="label" id="result">Here will be your result: </p>
 
         </form></div>
 <div id="B" style="visibility:hidden"  class="form-group">
@@ -42,7 +55,7 @@
             <br />
             
             <input class = "submit" type="button"  value="Submit" onclick="bmie()" />
-            <p class="label" id="result1">Here will be your result</p>
+            <p class="label" id="result1">Here will be your result: </p>
         </form></div>
     </div>
 </div>
